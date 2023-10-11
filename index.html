@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NEW NEIU STUDENT GUIDE</title>
+
+         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+           integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+           crossorigin=""/>
+
+         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+           crossorigin=""></script>
+
+    </head>
+
+    <body>
+        <div id="map" style="height: 500px"></div>
+
+        <script type="text/javascript">
+
+          var map = L.map('map', {
+              center: [41.98, -87.72],
+              zoom: 15
+          });
+
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+               attribution: '@ <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+               maxZoom: 20,
+               minZoom: 4
+            }).addTo(map);
+
+          var universityIcon = L.icon({
+              iconUrl: 'university.png', // url that links to the icon image file
+              iconSize:     [38, 38], // size of the icon image in pixels
+              iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+              popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+          });
+
+          var marker1 = L.marker([41.9805,-87.7170], {icon: universityIcon}).addTo(map);
+          var marker2 = L.marker([41.9805,-87.7193], {icon: universityIcon}).addTo(map);
+		  var marker3 = L.marker([41.9796,-87.7197], {icon: universityIcon}).addTo(map);
+		  var marker4 = L.marker([41.9807,-87.7203], {icon: universityIcon}).addTo(map);
+		  var marker5 = L.marker([41.9782,-87.7172], {icon: universityIcon}).addTo(map);
+		  
+          var pic1 = '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/NEIU_Sci.jpg/1024px-NEIU_Sci.jpg" alt="Bernard J Brommel Hall" width="250">';
+          var pic2 = '<img src="https://fastly.4sqi.net/img/general/600x600/X30C1FGHJUXCNPOUEP4SJ23EBEO0GEH41L5KZJHUKNOP1UB4.jpg" alt="Ronald Williams Library" width="250">';
+		  var pic3 = '<img src="https://primeraeng.com/wp-content/uploads/2017/08/Nest_0540_JohnnyStevens_Hero.jpg" alt="The Nest" width="250">';
+		  var pic4 = '<img src="https://www.neiu.edu/sites/neiu.edu/files/users/user4791/Squads%20810px.jpg" alt="NEIU Police Station" width="250">';
+		  var pic5 = '<img src="https://www.neiu.edu/sites/default/files/styles/feature_image/public/university-life/unit-dept-homepage-feature-images/2016/02/15/campus-rec-center.jpg?itok=4lc-4EYE" alt="Physical Education Complex" width="250">';
+
+          marker1.bindPopup('<p style="color:blue; font-weight:bold"> Most classes in department will be held in this building. </p>' + pic1);
+          marker2.bindPopup('<p style="color:seagreen; font-weight:bold">Best area to study and meet with tutors to assist with classes.</p>' + pic2);
+		  marker3.bindPopup('<p style="color:seagreen; font-weight:bold">State of the art, modern dorms located on site for a great college experience.</p>' + pic3);
+		  marker4.bindPopup('<p style="color:seagreen; font-weight:bold">Place to go in regards to any safety questions or public information in general.</p>' + pic4);
+		  marker5.bindPopup('<p style="color:seagreen; font-weight:bold">Fantastic facilities to swim or play basketball on down time.</p>' + pic5);
+
+        </script>
+   </body>
+</html>
